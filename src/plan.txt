@@ -1,0 +1,15 @@
+pages {
+    CategoryOrProduct.js
+    Product.js {
+        addProduct.js
+        editProduct.js
+    }
+    Category.js {
+        editCategory.js
+        editCategory.js
+    }
+    Login.js
+}
+
+
+
