@@ -1,7 +1,7 @@
-export const Button = ({ width }) => {
+export const Button = ({ width, text}) => {
     return (
         <button style={{ width: `${width}` }} className="longButton">
-            Add
+        {text}
         </button>
     );
 };

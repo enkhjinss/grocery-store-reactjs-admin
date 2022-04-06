@@ -5,7 +5,7 @@ export const Login = () => {
     return (
         <div
             className="flex column align-center"
-            style={{ height: "100vh", width: "100vw" }}
+            style={{ height: "100%", width: "100%" }}
         >
             <h1 style={{ margin: "12% 0"}}>Login</h1>
             <Input width={"25%"}/>

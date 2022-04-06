@@ -1,7 +1,9 @@
 pages {
     CategoryOrProduct.js
     Product.js {
-        addProduct.js
+        addProduct.js {
+            Product.js
+        }
         editProduct.js
     }
     Category.js {
