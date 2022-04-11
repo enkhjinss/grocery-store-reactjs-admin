@@ -1,3 +1,11 @@
+import { AddCategory } from "../components/AddCategory";
+import { EditCategory } from "../components/EditCategory";
+
 export const Category = () => {
-    return <h1>Category</h1>
+    return (
+        <main className="flex align-center justify-center">
+            <AddCategory />
+            <EditCategory />
+        </main>
+    )
 }
