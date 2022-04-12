@@ -1,7 +1,10 @@
 import { Input } from "./Input";
 import { ImgDiv } from "./ImgDiv";
+// import { useState } from "react";
 
-export const Product = () => {
+export const Product = ({ product }) => {
+    
+    // const [count, setCount] = useState(0);
     return (
         <div className="flex column" style={{width: "98%", marginBottom: "20px"}}>
             <h1>Product 1 Name</h1>
