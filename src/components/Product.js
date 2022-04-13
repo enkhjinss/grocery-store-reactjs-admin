@@ -1,9 +1,14 @@
 import { Input } from "./Input";
 import { ImgDiv } from "./ImgDiv";
-// import { useState } from "react";
 
 export const Product = ({ setProductDetail, productDetail }) => {
-    // const [count, setCount] = useState(0);
+    const onSelect = (e) => {
+        if (e.target.value === "Exclusive") {
+            setProductDetail({ ...productDetail, isExclusive: true });
+        } else {
+            setProductDetail({ ...productDetail, isBestSelling: true });
+        }
+    };
     return (
         <div
             className="flex column"
@@ -42,15 +47,25 @@ export const Product = ({ setProductDetail, productDetail }) => {
                         setProductDetail({ ...productDetail, price: price });
                     }}
                     width={"25%"}
+                    type="number"
                 />
                 <Input
                     onFun={(count) => {
                         setProductDetail({ ...productDetail, count: count });
                     }}
                     width={"25%"}
+                    type="number"
                 />
-                <Input width={"25%"} />
+                <Input width={"25%"} type="number" />
             </div>
+            <form action="/action_page.php">
+                <label htmlFor="cars">Choose a category xD: </label>
+                <select onChange={onSelect}>
+                    <option value="null">Choose</option>
+                    <option value="BestSelling">Best Selling</option>
+                    <option value="Exclusive">Exclusive</option>
+                </select>
+            </form>
         </div>
     );
 };

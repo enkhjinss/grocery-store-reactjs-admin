@@ -1,6 +1,7 @@
 import { Name } from "./Name";
 
-export const EditProduct = () => {
+export const EditProduct = ({ productDetail }) => {
+    console.log(productDetail);
     return (
         <div
             style={{ width: "40%", height: "80%" }}
