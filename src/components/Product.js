@@ -16,7 +16,7 @@ export const Product = ({ setProductDetail, productDetail }) => {
                     onFun={(productName) => {
                         setProductDetail({
                             ...productDetail,
-                            productName: productName,
+                            name: productName,
                         });
                     }}
                     width={"86.5%"}

@@ -1,13 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
-import './styles/flex.css';
-import App from './App';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./styles/index.css";
+import "./styles/flex.css";
+import App from "./App";
+createRoot(document.querySelector("#root")).render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
 );
-;

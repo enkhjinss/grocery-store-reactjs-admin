@@ -1,10 +1,12 @@
 import { Product } from "./Product";
 import { Button } from "./Button";
 import { useState } from "react";
+import axios from "axios";
 
 export const AddProduct = () => {
     const [productDetail, setProductDetail] = useState();
-    const onSave = () => {
+    const onSave = async () => {
+        await axios.post('http://localhost:8080/products', {data: productDetail})
         console.log(productDetail);
     };
     return (
@@ -24,10 +26,6 @@ export const AddProduct = () => {
                     setProductDetail={setProductDetail}
                     productDetail={productDetail}
                 />
-                {/* <Product />
-                <Product />
-                <Product />
-                <Product /> */}
             </div>
             <Button width="60%" text="Add" />
             <Button width="60%" text="Save" onClick={onSave} />
