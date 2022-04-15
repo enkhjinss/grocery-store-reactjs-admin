@@ -1,7 +1,11 @@
 import { Product } from "./Product";
 import { Button } from "./Button";
 
-export const AddProduct = ({ setProductDetail, productDetail, onSave }) => {
+export const AddProduct = ({
+    setProductDetail,
+    productDetail,
+    onSave,
+}) => {
     return (
         <div
             style={{ width: "60%", marginTop: "25px" }}

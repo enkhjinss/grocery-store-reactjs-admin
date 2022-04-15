@@ -4,7 +4,7 @@ import { ImgDiv } from "./ImgDiv";
 export const Product = ({ setProductDetail, productDetail }) => {
     const onSelect = (e) => {
         if (e.target.value === "Exclusive") {
-            setProductDetail({ ...productDetail, isExclusive: true });
+            setProductDetail({ ...productDetail, isExclusive: true, isBestSelling: false});
         } else {
             setProductDetail({ ...productDetail, isBestSelling: true });
         }
