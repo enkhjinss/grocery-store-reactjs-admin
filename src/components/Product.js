@@ -4,11 +4,17 @@ import { ImgDiv } from "./ImgDiv";
 export const Product = ({ setProductDetail, productDetail }) => {
     const onSelect = (e) => {
         if (e.target.value === "Exclusive") {
-            setProductDetail({ ...productDetail, isExclusive: true, isBestSelling: false});
-        } else {
+            setProductDetail({
+                ...productDetail,
+                isExclusive: true,
+                isBestSelling: false,
+            });
+        } else if (e.target.value === "BestSelling") {
             setProductDetail({ ...productDetail, isBestSelling: true });
         }
+        return;
     };
+
     return (
         <div
             className="flex column"
@@ -28,6 +34,7 @@ export const Product = ({ setProductDetail, productDetail }) => {
                 />
             </div>
             <h2>Description</h2>
+
             <Input
                 onFun={(description) => {
                     setProductDetail({
@@ -44,28 +51,42 @@ export const Product = ({ setProductDetail, productDetail }) => {
             <div className="flex space-between">
                 <Input
                     onFun={(price) => {
-                        setProductDetail({ ...productDetail, price: price });
+                        setProductDetail({
+                            ...productDetail,
+                            price: price,
+                        });
                     }}
                     width={"25%"}
                     type="number"
                 />
                 <Input
                     onFun={(count) => {
-                        setProductDetail({ ...productDetail, count: count });
+                        setProductDetail({
+                            ...productDetail,
+                            count: count,
+                        });
                     }}
                     width={"25%"}
                     type="number"
                 />
-                <Input width={"25%"} type="number" />
+                <Input
+                    width={"25%"}
+                    type="number"
+                    onFun={(priority) => {
+                        setProductDetail({
+                            ...productDetail,
+                            priority: priority,
+                        });
+                    }}
+                />
             </div>
-            <form action="/action_page.php">
-                <label htmlFor="cars">Choose a category xD: </label>
-                <select onChange={onSelect}>
-                    <option value="null">Choose</option>
-                    <option value="BestSelling">Best Selling</option>
-                    <option value="Exclusive">Exclusive</option>
-                </select>
-            </form>
+
+            <label htmlFor="cars">Choose a category xD: </label>
+            <select onChange={onSelect}>
+                <option value={null}>Choose</option>
+                <option value="BestSelling">Best Selling</option>
+                <option value="Exclusive">Exclusive</option>
+            </select>
         </div>
     );
 };

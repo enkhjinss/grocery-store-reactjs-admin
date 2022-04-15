@@ -4,18 +4,22 @@ import { useState } from "react";
 import axios from "axios";
 
 export const Product = () => {
-    const [productDetail, setProductDetail] = useState();
-    
+    const [productDetail, setProductDetail] = useState({
+        name: "",
+        description: "",
+        price: "",
+        count: "",
+        priority: "",
+    });
+    // const { name, price } = productDetail; // ene tergeltengis bagshiin helsen arga hereggui ym shg sngdsan, zugeer form n ali input hooson bn gedgiig helchihej bga bolohoor
+    // length-tei n tentsuu bish bvl gd shalgana
     const onSave = () => {
-        Object.values(productDetail).forEach((value) => {
-            if (value === null) {
-                alert("utgaa guitsed oruulna uu");
-            } else {
-                axios.post("http://localhost:8080/products", productDetail);
-                console.log("amjilltai");
-            }
-        });
+        if (Object.keys(productDetail).length === 7) {
+            axios.post("http://localhost:8080/products", productDetail);
+            alert("success")
+        }
     };
+
     return (
         <main className="flex align-center justify-center">
             <AddProduct

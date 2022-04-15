@@ -1,13 +1,13 @@
 import { Product } from "./Product";
 import { Button } from "./Button";
 
-export const AddProduct = ({
-    setProductDetail,
-    productDetail,
-    onSave,
-}) => {
+export const AddProduct = ({ setProductDetail, productDetail, onSave }) => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
     return (
-        <div
+        <form
+            onSubmit={handleSubmit}
             style={{ width: "60%", marginTop: "25px" }}
             className="flex column align-center"
         >
@@ -26,6 +26,6 @@ export const AddProduct = ({
             </div>
             {/* <Button width="60%" text="Add" /> */}
             <Button width="60%" text="Save" onClick={onSave} />
-        </div>
+        </form>
     );
 };
