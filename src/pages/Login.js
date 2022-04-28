@@ -1,23 +1,39 @@
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import googleIcon from "../pictures/googleIcon.svg";
+import gitHubLogo from "../pictures/github-logo.png";
 import { User } from "../components/User";
 
 import { useContext } from "react";
 
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+    GoogleAuthProvider,
+    signInWithPopup,
+    GithubAuthProvider,
+} from "firebase/auth";
 import auth from "../firebase";
 import { UserContext } from "../components/userContext";
 auth.languageCode = "it";
 
-const provider = new GoogleAuthProvider();
+const providerGoogle = new GoogleAuthProvider();
+const providerGit = new GithubAuthProvider();
 
 export const Login = () => {
     const { setUser, user } = useContext(UserContext);
+
     const googleSignIn = async () => {
         try {
-            const result = await signInWithPopup(auth, provider);
+            const result = await signInWithPopup(auth, providerGoogle);
             setUser(result.user);
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+
+    const gitHubSignUp = async () => {
+        try {
+            const result = await signInWithPopup(auth, providerGit);
+            setUser(...user, result.user);
         } catch (error) {
             console.log(error.message);
         }
@@ -34,7 +50,18 @@ export const Login = () => {
                     <Input width={"25%"} />
                     <Input width={"25%"} />
                     <Button width={"25%"} />
-                    <img src={googleIcon} onClick={googleSignIn} />
+                    <div style={{ display: "flex", marginTop: "35px" }}>
+                        <img src={googleIcon} onClick={googleSignIn} />
+                        <img
+                            src={gitHubLogo}
+                            onClick={gitHubSignUp}
+                            style={{
+                                height: "40px",
+                                width: "40px",
+                                marginLeft: "40px",
+                            }}
+                        />
+                    </div>
                 </div>
             )}
         </>

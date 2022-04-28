@@ -1,16 +1,16 @@
 import { UserContext } from "./userContext";
 import { useContext } from "react";
 
-import { doc, getDocs, collection } from "firebase/firestore";
-import { db } from "../firebase";
+// import { doc, getDocs, collection } from "firebase/firestore";
+// import { db } from "../firebase";
 
-const snap = async () => {
-    const querySnapshot = await getDocs(collection(db, "users"));
-    querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-    });
-};
-snap();
+// const snap = async () => {
+//     const querySnapshot = await getDocs(collection(db, "users"));
+//     querySnapshot.forEach((doc) => {
+//         console.log(doc.id, " => ", doc.data());
+//     });
+// };
+// snap();
 
 
 export const User = () => {
