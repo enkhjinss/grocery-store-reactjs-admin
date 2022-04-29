@@ -1,4 +1,4 @@
-export const Input = ({ width, onFun, type }) => {
+export const Input = ({ width, onFun, type, placeHolder }) => {
     const onChange = (e) => {
         onFun(e.target.value);
     };
@@ -7,7 +7,7 @@ export const Input = ({ width, onFun, type }) => {
             required
             onChange={onChange}
             type={type}
-            placeholder="name"
+            placeholder={placeHolder}
             style={{ width: `${width}` }}
             className="input"
         />
