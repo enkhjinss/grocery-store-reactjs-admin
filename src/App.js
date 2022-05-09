@@ -4,13 +4,13 @@ import { Login } from "./pages/Login";
 import { CategoryOrProduct } from "./pages/CategoryOrProduct";
 import { Product } from "./pages/Product";
 import { Category } from "./pages/Category";
-import { Theme } from "./components/Theme";
+// import { Theme } from "./components/Theme";
 import { UserProvider } from "./components/userContext";
 
 const App = () => {
     return (
         <UserProvider>
-            <Theme>
+            {/* <Theme> */}
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Login />} />
@@ -22,7 +22,7 @@ const App = () => {
                         <Route path="product" element={<Product />} />
                     </Routes>
                 </BrowserRouter>
-            </Theme>
+            {/* </Theme> */}
         </UserProvider>
     );
 };
