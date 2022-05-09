@@ -76,7 +76,7 @@ export const Login = () => {
             {!user && (
                 <div className="flex column align-center">
                     <div id="sign-in-button"></div>
-                    <h1>Login aaaa</h1>
+                    <h1>Login eeee</h1>
                     <Input
                         placeHolder="enter the phone number"
                         width={"50%"}
