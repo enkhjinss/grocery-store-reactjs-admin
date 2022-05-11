@@ -1,5 +1,5 @@
 import { Product } from "./Product";
-import { Button } from "./Button";
+import { ButtonComponent } from "./Button";
 
 export const AddProduct = ({ setProductDetail, productDetail, onSave }) => {
     const handleSubmit = (e) => {
@@ -25,7 +25,7 @@ export const AddProduct = ({ setProductDetail, productDetail, onSave }) => {
                 />
             </div>
             {/* <Button width="60%" text="Add" /> */}
-            <Button width="60%" text="Save" onClick={onSave} />
+            <ButtonComponent width="60%" text="Save" onClick={onSave} />
         </form>
     );
 };

@@ -1,5 +1,5 @@
 import { CategoryDetail } from "./CategoryDetail";
-import { Button } from "./Button";
+import { ButtonComponent } from "./Button";
 
 export const AddCategory = () => {
     return (
@@ -11,7 +11,7 @@ export const AddCategory = () => {
                 <CategoryDetail />
                 <CategoryDetail />
             </div>
-            <Button text="Add category" width="60%"/>
+            <ButtonComponent text="Add category" width="60%"/>
         </div>
     );
 };

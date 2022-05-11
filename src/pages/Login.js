@@ -1,8 +1,11 @@
-import { Input } from "../components/Input";
-import { Button } from "../components/Button";
-import googleIcon from "../pictures/googleIcon.svg";
-import gitHubLogo from "../pictures/github-logo.png";
+import { InputComponent } from "../components/Input";
+import { ButtonComponent } from "../components/Button";
 import { User } from "../components/User";
+import { CategoryOrProduct } from "./CategoryOrProduct";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import GoogleIcon from "@mui/icons-material/Google";
+import IconButton from "@mui/material/IconButton";
 
 import "../styles/login.css";
 import "../styles/flex.css";
@@ -72,12 +75,12 @@ export const Login = () => {
 
     return (
         <>
-            {user && <User />}
+            {user && <CategoryOrProduct />}
             {!user && (
                 <div className="flex column align-center">
                     <div id="sign-in-button"></div>
-                    <h1>Login suulinh hha</h1>
-                    <Input
+                    <h1>Login</h1>
+                    <InputComponent
                         placeHolder="enter the phone number"
                         width={"50%"}
                         onFun={(value) => {
@@ -86,18 +89,18 @@ export const Login = () => {
                         type="number"
                     />
 
-                    <Button
+                    <ButtonComponent
                         width={"50%"}
                         text="check code"
                         onClick={signInPhoneNumber}
                     />
                     <div className="flex loginContainer">
-                        <img src={googleIcon} onClick={googleSignIn} />
-                        <img
-                            src={gitHubLogo}
-                            className="signInGitHub"
-                            onClick={gitHubSignUp}
-                        />
+                        <IconButton onClick={googleSignIn}>
+                            <GoogleIcon />
+                        </IconButton>
+                        <IconButton onClick={gitHubSignUp}>
+                            <GitHubIcon />
+                        </IconButton>
                     </div>
                 </div>
             )}

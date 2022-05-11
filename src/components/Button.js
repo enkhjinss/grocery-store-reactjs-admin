@@ -1,13 +1,22 @@
-export const Button = ({ width, text, onClick, type, id }) => {
+import { Button } from "@mui/material";
+
+export const ButtonComponent = ({ width, text, onClick, type, id }) => {
     return (
-        <button
-            onClick={onClick}
-            type="submit"
+        <Button
+            variant="contained"
             id={id}
-            style={{ width: `${width}` }}
-            className="longButton"
+            sx = {{width: `${width}`, mt: "20px"}}
         >
             {text}
-        </button>
+        </Button>
+        // <button
+        //     onClick={onClick}
+        //     type="submit"
+        //     id={id}
+        //     style={{ width: `${width}` }}
+        //     className="longButton"
+        // >
+        //     {text}
+        // </button>
     );
 };

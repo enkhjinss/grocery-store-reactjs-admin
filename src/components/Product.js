@@ -1,4 +1,4 @@
-import { Input } from "./Input";
+import { InputComponent } from "./Input";
 import { ImgDiv } from "./ImgDiv";
 
 export const Product = ({ setProductDetail, productDetail }) => {
@@ -23,7 +23,7 @@ export const Product = ({ setProductDetail, productDetail }) => {
             <h1>Product 1 Name</h1>
             <div className="flex">
                 <ImgDiv width={"13.5%"} />
-                <Input
+                <InputComponent
                     onFun={(productName) => {
                         setProductDetail({
                             ...productDetail,
@@ -35,7 +35,7 @@ export const Product = ({ setProductDetail, productDetail }) => {
             </div>
             <h2>Description</h2>
 
-            <Input
+            <InputComponent
                 onFun={(description) => {
                     setProductDetail({
                         ...productDetail,
@@ -49,7 +49,7 @@ export const Product = ({ setProductDetail, productDetail }) => {
                 <h1>Priority</h1>
             </div>
             <div className="flex space-between">
-                <Input
+                <InputComponent
                     onFun={(price) => {
                         setProductDetail({
                             ...productDetail,
@@ -59,7 +59,7 @@ export const Product = ({ setProductDetail, productDetail }) => {
                     width={"25%"}
                     type="number"
                 />
-                <Input
+                <InputComponent
                     onFun={(count) => {
                         setProductDetail({
                             ...productDetail,
@@ -69,7 +69,7 @@ export const Product = ({ setProductDetail, productDetail }) => {
                     width={"25%"}
                     type="number"
                 />
-                <Input
+                <InputComponent
                     width={"25%"}
                     type="number"
                     onFun={(priority) => {

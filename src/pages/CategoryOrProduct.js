@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Button } from "../components/Button";
+import { ButtonComponent } from "../components/Button";
 
 import { UserContext } from "../components/userContext";
 import { useContext, useState } from "react";
@@ -30,10 +30,10 @@ export const CategoryOrProduct = () => {
                 style={{ height: "100%" }}
             >
                 <Link to="/product">
-                    <Button text={"Product"} />
+                    <ButtonComponent text={"Product"} />
                 </Link>
                 <Link to="/category">
-                    <Button text={"Category"} />
+                    <ButtonComponent text={"Category"} />
                 </Link>
             </div>
         </>
