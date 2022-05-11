@@ -30,10 +30,10 @@ export const CategoryOrProduct = () => {
                 style={{ height: "100%" }}
             >
                 <Link to="/product">
-                    <ButtonComponent text={"Product"} />
+                    <ButtonComponent text="Product" />
                 </Link>
                 <Link to="/category">
-                    <ButtonComponent text={"Category"} />
+                    <ButtonComponent text="Category" />
                 </Link>
             </div>
         </>

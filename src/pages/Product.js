@@ -16,7 +16,7 @@ export const Product = () => {
     const onSave = () => {
         if (Object.keys(productDetail).length === 7) {
             axios.post("http://localhost:8080/products", productDetail);
-            alert("success")
+            alert("success");
         }
     };
 

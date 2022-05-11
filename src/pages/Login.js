@@ -81,7 +81,7 @@ export const Login = () => {
                     <div id="sign-in-button"></div>
                     <h1>Login</h1>
                     <InputComponent
-                        placeHolder="enter the phone number"
+                        placeHolder="Enter the phone number"
                         width={"50%"}
                         onFun={(value) => {
                             setCode(value);
@@ -102,6 +102,7 @@ export const Login = () => {
                             <GitHubIcon />
                         </IconButton>
                     </div>
+                    {/* <ButtonComponent text="hjkdsfa" variant="contained"></ButtonComponent> */}
                 </div>
             )}
         </>
